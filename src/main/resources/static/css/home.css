@@ -1,0 +1,134 @@
+.section{
+    margin:15%;
+    margin-top:0;
+}
+
+h2{
+    background-color:blue;
+}
+
+.banner{
+    margin-bottom:10%;
+    width:100%;
+    height:550px;
+    background-color:green;
+    /*background:url("https://cdn.pixabay.com/photo/2017/04/26/10/29/landscape-2262227_1280.jpg");*/
+    background:linear-gradient(45deg,Violet 40%, Orange);
+    background-size:cover;
+}
+/*----------start of section1-----------*/
+.gridBox1{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:15px;
+    background-color:#FFFDCC;
+    width:80%;
+}
+
+.homeGrid{
+}
+
+.homeGridItem1{
+    height:400px;
+    background-color:black;
+}
+
+.homeGridItem2{
+    height:400px;
+    background-color:gray;
+}
+
+.homeGridItem3{
+    height:400px;
+    background-color:black;
+}
+
+.homeGridItem4{
+    height:400px;
+    background-color:gray;
+}
+
+.description{
+    height:40px;
+    background-color:white;
+    text-align:center;
+}
+
+
+/*--------end of section1-----------*/
+
+
+/*--------start of section2-----------*/
+.section2{
+    height:150px;
+    width:80%;
+    background:tomato;
+}
+
+/*--------end of section2----------*/
+
+/*--------start of section3--------*/
+
+.gridBox2{
+    width:80%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    background-color:red;
+    gap:15px;
+}
+
+.saleGrid{
+    height:500px;
+}
+
+.saleGrid1{
+    background-color:peru;
+}
+
+.saleGrid2{
+    background-color:brown;
+}
+.saleGrid3{
+    background-color:skyblue;
+}
+
+.saleDesc{
+    height:40px;
+    background-color:white;
+    text-align:center;
+}
+/*--------end of section3----------*/
+
+
+
+/*-------section 4-----------*/
+.gridBox3{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    width:80%;
+    background-color: darkgreen;
+}
+
+.newPrd{
+    height:400px;
+}
+
+.newPrd1{
+    background-color:black;
+}
+.newPrd2{
+    background-color:lightgray;
+}
+.newPrd3{
+    background-color:black;
+}
+.newPrd4{
+    background-color:lightgray;
+}
+
+.newPrdDesc{
+    height:40px;
+    background-color:white;
+    text-align:center;
+}

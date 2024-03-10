@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/home.css}" type="text/css">
+    <meta charset="UTF-8">
+    <title>쇼핑몰</title>
+</head>
+<body>
+<div th:replace="~{header/header :: headerFragment}"></div>
+<div class="container">
+    <div class="section banner"></div>
+    <h2>지금 가장 많이 담는 특가!</h2>
+    <div class="section section1 gridBox1">
+        <div class="homeGrid homeGridItem1"></div>
+        <div class="homeGrid homeGridItem2"></div>
+        <div class="homeGrid homeGridItem3"></div>
+        <div class="homeGrid homeGridItem4"></div>
+        <div class="homeGrid homeGridItem5 description"><a th:href="@{#}">Description Field</a></div>
+        <div class="homeGrid homeGridItem6 description"><a th:href="@{#}">Description Field</a></div>
+        <div class="homeGrid homeGridItem7 description"><a th:href="@{#}">Description Field</a></div>
+        <div class="homeGrid homeGridItem8 description"><a th:href="@{#}">Description Field</a></div>
+    </div>
+    <h2>할인쿠폰 받아 가세요~!!!</h2>
+<!-- section2에는 이미지 들어갈 예정   -->
+    <div class="section section2"></div>
+    <h2>비교 불가! 최저가 챌린지!</h2>
+    <div class="section section3 gridBox2">
+        <div class="saleGrid saleGrid1"></div>
+        <div class="saleGrid saleGrid2"></div>
+        <div class="saleGrid saleGrid3"></div>
+        <div class="saleDesc saleDesc1"><a th:href="@{#}">Description Field</a></div>
+        <div class="saleDesc saleDesc2"><a th:href="@{#}">Description Field</a></div>
+        <div class="saleDesc saleDesc3"><a th:href="@{#}">Description Field</a></div>
+    </div>
+    <h2>5천원 쿠폰 찬스!</h2>
+    <div class="section section4 gridBox3">
+        <div class="newPrd newPrd1"></div>
+        <div class="newPrd newPrd2"></div>
+        <div class="newPrd newPrd3"></div>
+        <div class="newPrd newPrd4"></div>
+        <div class="newPrdDesc newPrdDesc1"><a th:href="@{#}">Description Field</a></div>
+        <div class="newPrdDesc newPrdDesc2"><a th:href="@{#}">Description Field</a></div>
+        <div class="newPrdDesc newPrdDesc3"><a th:href="@{#}">Description Field</a></div>
+        <div class="newPrdDesc newPrdDesc4"><a th:href="@{#}">Description Field</a></div>
+    </div>
+</div>
+</body>
+<script th:src="@{/js/hideHeader.js}" type="text/javascript"></script>
+</html>

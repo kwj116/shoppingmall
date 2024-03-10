@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="header" th:fragment="headerFragment">
+    <div class="headerGridBox" >
+        <div class="headerItem headerItem1">item1</div>
+        <div class="headerItem headerItem2">
+            <div class="block block1">
+                <a class="logo" th:href="@{/}">
+                    <h3>Shopping Mall</h3>
+                </a>
+            </div>
+            <div class="block block2">
+                <div class="searchBox">
+                    <input class="search" type="text" placeholder="검색어를 입력해주세요.">
+                    <button type="submit">찾기</button>
+                </div>
+            </div>
+            <div class="block block3">
+                <span>
+                    <a class="menu" th:href="@{/user/login}">로그인</a>&ensp;|
+                    <a class="menu" th:href="@{/user/signUp}">회원가입</a>&ensp;|
+                    <a class="menu" th:href="@{/user/cart}">장바구니</a>&ensp;|
+                    <a class="menu" th:href="@{#}">고객센터</a>
+                </span>
+            </div>
+            <div class="block block4">
+                <div class="category">
+                    <h3>카테고리</h3>
+                    <div class="dropdown-content">
+                        <a href="#">block</a>
+                        <a href="#">block</a>
+                        <a href="#">block</a>
+                        <a href="#">block</a>
+                        <a href="#">block</a>
+                        <a href="#">block</a>
+                        <a href="#">block</a>
+                        <a href="#">block</a>
+                        <a href="#">block</a>
+                        <a href="#">block</a>
+                    </div>
+                </div>
+                <a th:href="@{/prd/best}"><h3>인기상품</h3></a>
+                <a th:href="@{/prd/sale}"><h3>할인상품</h3></a>
+                <a th:href="@{/prd/new}"><h3>신상품</h3></a>
+                <a th:href="@{/prd/benefit}"><h3>특가/혜택</h3></a>
+            </div>
+        </div>
+        <div class="headerItem headerItem3">item3</div>
+    </div>
+</div>
+</body>
+</html>

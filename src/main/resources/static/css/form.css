@@ -1,0 +1,32 @@
+.loginForm{
+    background-color:peru;
+}
+
+form{
+    height:350px;
+    width:450px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.id,.password,.submit{
+    height:50px;
+    width:300px;
+    border-radius:5px;
+}
+
+.submit{
+    cursor:pointer;
+    outline:none;
+    background-color:#1C39BB;
+    color:white;
+    border:none;
+}
+
+.findIdPw{
+    background-color:red;
+    width:100%;
+    text-align:end;
+}
