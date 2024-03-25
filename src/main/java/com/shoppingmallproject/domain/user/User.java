@@ -1,8 +1,6 @@
 package com.shoppingmallproject.domain.user;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class User {
@@ -11,12 +9,13 @@ public class User {
     @Column(name = "user_id", nullable = false, unique = true)
     private String userId;
 
-    @Column(name="user_pw", nullable = false)
+    @Column(name = "user_pw", nullable = false)
     private String userPw;
 
-    @Column(name="user_name", nullable = false)
+    @Column(name = "user_name", nullable = false)
     private String username;
 
-
-
+    @OneToOne(orphanRemoval = true)
+    @JoinColumn(name = "user_info_id")
+    private Long userInfoId;
 }

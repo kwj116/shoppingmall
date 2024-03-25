@@ -8,8 +8,9 @@ import java.sql.Timestamp;
 public class UserInfo {
 
     @Id
-    @Column(name = "user_info", nullable = false, unique = true)
-    private String userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userInfoId;
+
     @Column(name="email", nullable = false, unique = true)
     private String email;
 
@@ -17,12 +18,13 @@ public class UserInfo {
     private String phone;
 
     //적립금 없을수도 있으니 null허용.
-    @Column(name="int", nullable = true)
+    @Column(name="reward", nullable = true)
     private int reward;
 
     @Column(name = "grade", nullable = false)
     @Enumerated(EnumType.STRING)
     private Role grade;
+
     @Column(name = "marketing_preferences", nullable = false)
     private Boolean marketingPreferences;
 
