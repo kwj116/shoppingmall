@@ -1,15 +1,14 @@
 package com.shoppingmallproject.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.shoppingmallproject.domain.user.User;
+import jakarta.persistence.*;
 
 @Entity
 public class Cart {
 
     @Id
-    @Column(name = "user_id", nullable = false, unique = true)
-    private String userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long cartId;
 
     @Column(name = "product_number", nullable = false)
     private int productNumber;
@@ -17,5 +16,11 @@ public class Cart {
     @Column(name = "product_quantity", nullable = false)
     private int productQuantity;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "userId")
+    private User userId;
 
+    @OneToOne
+    @JoinColumn(name = "product_number", referencedColumnName = "productId")
+    private Product productId;
 }

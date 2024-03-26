@@ -1,5 +1,6 @@
 package com.shoppingmallproject.domain;
 
+import com.shoppingmallproject.domain.seller.Seller;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
@@ -30,12 +31,13 @@ public class Product {
     @Column(name = "restock_date")
     private Timestamp restockDate;
 
-    @Column(name = "address", nullable = false)
-    private String address;
-
     @Column(name = "image_url", nullable = false)
     private String imageUrl;
 
     @Column(name = "brand", nullable = false)
     private String brand;
+
+    @ManyToOne
+    @JoinColumn(name = "seller_id", referencedColumnName = "sellerId")
+    private Seller sellerId;
 }

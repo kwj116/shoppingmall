@@ -1,10 +1,11 @@
 package com.shoppingmallproject.domain.seller;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.shoppingmallproject.domain.Product;
+import jakarta.persistence.*;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Seller {
@@ -24,5 +25,6 @@ public class Seller {
     @Column(name = "signup_date", nullable = false)
     private Timestamp signupDate;
 
-
+    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+    private List<Product> products = new ArrayList<>();
 }

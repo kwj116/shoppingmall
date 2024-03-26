@@ -12,6 +12,8 @@ public class OrderGroup {
     @Column(name = "order_group_number", nullable = false)
     private int orderGroupNumber;
 
+    @OneToMany
+    @JoinColumn(name = "user_id", referencedColumnName = "userId")
     private String userId;
 
     @Column(name = "order_date", nullable = false)
@@ -22,7 +24,6 @@ public class OrderGroup {
 
     @Column(name = "reward")
     private int reward;
-
 
 
 }

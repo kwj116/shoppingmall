@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
+@Table(name = "orders")
 public class Order {
 
     @Id
@@ -13,15 +14,8 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderNumber;
 
-
-    private int orderGroupNumber;
-
-    private int productNumber;
-
     @Column(name = "product_quantity", nullable = false)
     private int productQuantity;
-
-    private int coupon;
 
     @Column(name = "is_cancelled", nullable = false)
     private Boolean isCancelled;
@@ -29,9 +23,20 @@ public class Order {
     @Column(name = "order_date", nullable = false)
     private Timestamp orderDate;
 
-    private String sellerId;
-
     @Column(name = "status", nullable = false)
     private Boolean status;
 
+    @OneToOne
+    private String sellerId;
+
+    @ManyToOne
+    @JoinColumn(name = "order_group_id", referencedColumnName = "")
+    private int orderGroupNumber;
+
+    @OneToOne
+    private int productNumber;
+
+    @OneToOne
+    @JoinColumn(name = "")
+    private int coupon;
 }
