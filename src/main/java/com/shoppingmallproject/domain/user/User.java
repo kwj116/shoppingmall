@@ -1,6 +1,7 @@
 package com.shoppingmallproject.domain.user;
 
-import com.shoppingmallproject.domain.Cart;
+import com.shoppingmallproject.domain.*;
+import com.shoppingmallproject.domain.order.OrderGroup;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
@@ -43,6 +44,30 @@ public class User {
     @Column(name = "signup_date", nullable = false)
     private Timestamp signupDate;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.REMOVE)
-    private List<Cart> carts = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<Cart> cartList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<OrderGroup> orderGroupList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<Coupon> couponList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<Wish> whishList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<Review> reviewList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<Restock> restockList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<DeliveryAddress> deliveryAddressList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<RecentlyViewedProduct> recentlyViewedProductList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<Enquiry> enquiryList = new ArrayList<>();
 }

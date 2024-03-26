@@ -1,6 +1,7 @@
 package com.shoppingmallproject.domain.seller;
 
 import com.shoppingmallproject.domain.Product;
+import com.shoppingmallproject.domain.order.Order;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
@@ -17,7 +18,7 @@ public class Seller {
     private String sellerPw;
 
     @Column(name = "seller_name", nullable = false)
-    private String sellername;
+    private String sellerName;
 
     @Column(name = "authorization_status", nullable = false)
     private Boolean authorizationStatus;
@@ -25,6 +26,9 @@ public class Seller {
     @Column(name = "signup_date", nullable = false)
     private Timestamp signupDate;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
-    private List<Product> products = new ArrayList<>();
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.REMOVE)
+    private List<Product> productList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "seller")
+    private List<Order> orderList = new ArrayList<>();
 }

@@ -4,12 +4,12 @@ import com.shoppingmallproject.domain.user.User;
 import jakarta.persistence.*;
 
 @Entity
-public class Restock {
+public class RecentlyViewedProduct {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "restock_number",nullable = false)
-    private Long restockNumber;
+    @Column(name = "viewed_number",nullable = false)
+    private Long viewdNumber;
 
     @OneToOne
     @JoinColumn(name = "product_number", referencedColumnName = "product_number")

@@ -8,19 +8,16 @@ public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cartId;
-
-    @Column(name = "product_number", nullable = false)
-    private int productNumber;
+    private Long cartNumber;
 
     @Column(name = "product_quantity", nullable = false)
     private int productQuantity;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "userId")
-    private User userId;
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    private User user;
 
     @OneToOne
-    @JoinColumn(name = "product_number", referencedColumnName = "productId")
-    private Product productId;
+    @JoinColumn(name = "product_number", referencedColumnName = "product_number")
+    private Product productNumber;
 }

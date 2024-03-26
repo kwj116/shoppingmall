@@ -15,6 +15,6 @@ public class SellerApllications {
     private String sellerPw;
 
     @Column(name = "seller_name", nullable = false)
-    private String sellername;
+    private String sellerName;
 }
 

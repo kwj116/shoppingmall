@@ -15,7 +15,7 @@ public class Admin {
     private String adminPw;
 
     @Column(name = "admin_name", nullable = false)
-    private String adminname;
+    private String adminName;
 
 
 }

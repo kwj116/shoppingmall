@@ -4,6 +4,8 @@ import com.shoppingmallproject.domain.seller.Seller;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Product {
@@ -11,7 +13,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_number", nullable = false)
-    private int productNumber;
+    private Long productNumber;
 
     @Column(name = "product_name", nullable = false)
     private String productName;
@@ -38,6 +40,9 @@ public class Product {
     private String brand;
 
     @ManyToOne
-    @JoinColumn(name = "seller_id", referencedColumnName = "sellerId")
-    private Seller sellerId;
+    @JoinColumn(name = "seller_id", referencedColumnName = "seller_id")
+    private Seller seller;
+
+    @OneToMany(mappedBy = "product")
+    private List<Review> reviewList = new ArrayList<>();
 }

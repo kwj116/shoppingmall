@@ -1,5 +1,6 @@
 package com.shoppingmallproject.domain;
 
+import com.shoppingmallproject.domain.user.User;
 import jakarta.persistence.*;
 import org.checkerframework.checker.units.qual.C;
 
@@ -10,10 +11,7 @@ public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "coupon_number", nullable = false)
-    private int couponNumber;
-
-    //FK : User
-    private int userId;
+    private Long couponNumber;
 
     @Column(name = "discount_type", nullable = false)
     private String discountType;
@@ -33,4 +31,7 @@ public class Coupon {
     @Column(name = "status", nullable = false)
     private String status;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    private User user;
 }

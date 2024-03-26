@@ -9,10 +9,7 @@ public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "answer_number", nullable = false)
-    private int answer_number;
-
-    //FK : Enquiry
-    private int enquiryNumber;
+    private Long answerNumber;
 
     @Column(name = "answer_content", nullable = false, columnDefinition = "Text")
     private String answerContent;
@@ -22,4 +19,8 @@ public class Answer {
 
     @Column(name = "modify_date", nullable = false)
     private Timestamp modifyDate;
+
+    @OneToOne
+    @JoinColumn(name = "enquiry_number", referencedColumnName = "enquiry_number")
+    private Enquiry enquiry;
 }

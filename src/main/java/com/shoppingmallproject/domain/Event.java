@@ -1,5 +1,6 @@
 package com.shoppingmallproject.domain;
 
+import com.shoppingmallproject.domain.category.Category;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
@@ -8,14 +9,12 @@ import java.sql.Timestamp;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "event_id", nullable = false)
-    private int eventId;
+    @Column(name = "event_number", nullable = false)
+    private Long eventNumber;
 
     @Column(name = "event_type", nullable = false)
     private String eventType;
 
-    //FK : Category
-    private int categoryNumber;
     @Column(name = "discount_amount", nullable = false)
     private int discountAmount;
 
@@ -33,4 +32,8 @@ public class Event {
 
     @Column(name = "event_img_url", nullable = false, columnDefinition = "Text")
     private String eventImgUrl;
+
+    @Column(name = "category")
+    @Enumerated(EnumType.STRING)
+    private Category category;
 }
